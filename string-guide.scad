@@ -5,7 +5,6 @@
 
 include <configuration.scad>
 
-descent_thickness = 3 * layer_height;
 guide_height = 7 + descent_thickness;
 
 // thickness of the ring in thinnest part
