@@ -7,13 +7,6 @@ include <configuration.scad>
 use <string-guide.scad>
 use <drive-pulley.scad>
 
-base_height = 4;
-
-module bearing_base() {
-    cylinder(h=base_height, r=15);
-    cylinder(h=base_height + descent_thickness + layer_height, r=7);
-    cylinder(h=base_height + descent_thickness + layer_height + 4, r=(8 - single_wall_width) / 2);
-}
 %translate ([70, -1, base_height + 0.2])
 {
 drive_pulley();
@@ -46,13 +39,8 @@ difference() {
     union() {
 
         // base
-        translate([0,-5,base_height / 2]) cube([50, 30, base_height], center = true);
-        translate([-25,0,0]) {
-            bearing_base();
-        }
-        translate([25,0,0]) {
-            bearing_base();
-        }
+        translate([0, -14, base_height / 2]) cube([50, 10, base_height], center = true);
+        bearing_bed();
 
         // face to carriage
         translate([0,-20,5 + base_height / 2]) cube([50, 4 * single_wall_width, 10 + base_height], center = true);
@@ -64,7 +52,7 @@ difference() {
 
 
     union() {
-        // passthru wire 
+        // passthru wire
         translate([0, -15, base_height + 4.2]) rotate([0, 90, 0]) cylinder(r = 2, h = 100, center = true);
         // wires to carriage
         translate([12, 0, base_height + 4.2]) rotate([0, 90, 90]) scale([1.5, 1, 1]) cylinder(r = 2, h = 100, center = true);
@@ -77,20 +65,7 @@ difference() {
     translate([25,0,-1]) cylinder(r=1.5, h=30);
 }
 
+
 translate([0,35,0]) {
-    difference() {
-        union() {
-            translate([-25,0,0]) {
-                bearing_base();
-            }
-            translate([25,0,0]) {
-                bearing_base();
-            }
-            translate([0, 0, base_height / 2]) cube([30, 20, base_height], center = true);
-        }
-
-        translate([-25,0,-1]) cylinder(r=1.5, h=30);
-        translate([25,0,-1]) cylinder(r=1.5, h=30);
-    }
+    bearing_bed();
 }
-

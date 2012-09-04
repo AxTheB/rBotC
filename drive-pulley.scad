@@ -32,7 +32,6 @@ module drive_pulley()
 
 pulley_spacing = 3 + 2 * (shaft_radius + wall_max_thickness);
 
-// there are two idlers with guide in middle, for far inner corners
 for(i = [0:1]) {
     translate ([i * pulley_spacing, 0, 0]) drive_pulley();
 }
