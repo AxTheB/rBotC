@@ -5,7 +5,7 @@ single_wall_width = layer_height * 2.2;
 // bot part properties
 bearing_radius = 11;
 shaft_radius = 2.5;
-descent_thickness = 3 * layer_height;
+descent_thickness = 2 * layer_height;
 base_height = 4;
 
 // common funcions here
@@ -22,8 +22,8 @@ module bearing_base(holes=false) {
     } else {
         cylinder(h=base_height, r=15);
     }
-    cylinder(h=base_height + descent_thickness + layer_height, r=7);
-    cylinder(h=base_height + descent_thickness + layer_height + 4, r=(8 - single_wall_width) / 2);
+    cylinder(h=base_height + descent_thickness + 1, r=7);
+    cylinder(h=base_height + descent_thickness + 5, r=(8 - single_wall_width) / 2);
 }
 
 module bearing_bed(dist=50, holes=false){
