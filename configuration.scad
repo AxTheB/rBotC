@@ -15,7 +15,7 @@ module bearing_base(holes=false) {
         cylinder(h=base_height, r2=15, r1=15 + base_height);
         for (angle = [0:17]) {
             rotate([0, 0, angle*20]) {
-                translate([15 + base_height / 2, 0, -1]) rotate([0, 0, 180]) cylinder(r=1, h=base_height, $fn=5);
+                translate([16, 0, -1]) rotate([0, 0, 180]) cylinder(r=1, h=base_height+2);
             }
         }
         }
