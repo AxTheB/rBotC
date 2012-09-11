@@ -27,7 +27,7 @@ module bearing_base(holes=false) {
         cylinder(h=base_height, r=15);
     }
     cylinder(h=base_height + descent_thickness + 1, r=7);
-    cylinder(h=base_height + descent_thickness + 5, r=(8 - single_wall_width) / 2);
+    cylinder(h=base_height + descent_thickness + 4.5, r=(8 - single_wall_width) / 2);
 }
 
 module bearing_bed(dist=50, holes=false){

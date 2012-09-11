@@ -55,8 +55,8 @@ difference() {
         // passthru wire
         translate([0, -15, base_height + 4.2]) rotate([0, 90, 0]) cylinder(r = 2, h = 100, center = true);
         // wires to carriage
-        translate([12, 0, base_height + 4.2]) rotate([0, 90, 90]) scale([1.5, 1, 1]) cylinder(r = 2, h = 100, center = true);
-        translate([-12, 0, base_height + 4.2]) rotate([0, 90, 90]) scale([1.5, 1, 1]) cylinder(r = 2, h = 100, center = true);
+        translate([12, 0, base_height + 4.2]) rotate([0, 90, 90])  cylinder(r = 3, h = 100, center = true);
+        translate([-12, 0, base_height + 4.2]) rotate([0, 90, 90]) cylinder(r = 3, h = 100, center = true);
         // distance rod
         translate([0, -28, base_height + 4.2]) rotate([90, 0, 0]) cylinder(r=4, h=20, center = true);
     }
