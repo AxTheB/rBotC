@@ -8,17 +8,21 @@ shaft_radius = 2.5;
 descent_thickness = 2 * layer_height;
 base_height = 4;
 
-// common funcions here
-module bearing_base(holes=false) {
-    if (holes) {
-        difference() {
+module base_with_holes(r=15) {
+    difference() {
         cylinder(h=base_height, r2=15, r1=15 + base_height);
         for (angle = [0:17]) {
             rotate([0, 0, angle*20]) {
                 translate([16, 0, -1]) rotate([0, 0, 180]) cylinder(r=1, h=base_height+2);
             }
         }
-        }
+    }
+}
+
+// common funcions here
+module bearing_base(holes=false) {
+    if (holes) {
+        base_with_holes();
     } else {
         cylinder(h=base_height, r=15);
     }
